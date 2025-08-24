@@ -1,0 +1,16 @@
+{
+	"name": "AzSqlTbl_Adress_nasar",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "azuresql",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"table": "address_nasar"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

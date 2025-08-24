@@ -1,0 +1,7 @@
+{
+	"name": "FAVSP-DBA17IntegrationRunTime",
+	"properties": {
+		"type": "SelfHosted",
+		"description": "It is actually connection to FAVSP-PROD117 and not to FAVSP-DBA17.  I can't change the name"
+	}
+}

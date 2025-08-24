@@ -1,0 +1,9 @@
+{
+	"name": "intro-to-ADF-na",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "5a07567b-daff-4944-874d-8c225fd288f5",
+		"tenantId": "b1f9e34f-1121-4c70-8f88-aff49a1ef321"
+	}
+}
