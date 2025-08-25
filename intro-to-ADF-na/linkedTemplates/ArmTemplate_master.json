@@ -1,0 +1,161 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "intro-to-ADF-na"
+		},
+		"az_adls_introtoadfna_02242025_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'az_adls_introtoadfna_02242025'"
+		},
+		"az_adls_introtoadlna_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'az_adls_introtoadlna'"
+		},
+		"az_sqldb_AdventureWorkdLT_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'az_sqldb_AdventureWorkdLT'"
+		},
+		"az_sqldb_AdventureWorksLT_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'az_sqldb_AdventureWorksLT'"
+		},
+		"azuresql_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'azuresql'"
+		},
+		"blobSource_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'blobSource'"
+		},
+		"az_adls_introtoadfna_02242025_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://introtoadfna.dfs.core.windows.net/"
+		},
+		"az_adls_introtoadlna_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://introtoadfna.dfs.core.windows.net/"
+		},
+		"az_sqldb_AdventureWorkdLT_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "introtoadfna.database.windows.net"
+		},
+		"az_sqldb_AdventureWorkdLT_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "AdventureWorksLT"
+		},
+		"az_sqldb_AdventureWorkdLT_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "Adminuser"
+		},
+		"az_sqldb_AdventureWorksLT_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "introtoadfna.database.windows.net"
+		},
+		"az_sqldb_AdventureWorksLT_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "AdventureWorksLT"
+		},
+		"az_sqldb_AdventureWorksLT_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "Adminuser"
+		},
+		"azuresql_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "introtoadfna.database.windows.net"
+		},
+		"azuresql_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "AdventureWorksLT"
+		},
+		"azuresql_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "azam"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "intro-to-ADF-na_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"az_adls_introtoadfna_02242025_accountKey": {
+						"value": "[parameters('az_adls_introtoadfna_02242025_accountKey')]"
+					},
+					"az_adls_introtoadlna_accountKey": {
+						"value": "[parameters('az_adls_introtoadlna_accountKey')]"
+					},
+					"az_sqldb_AdventureWorkdLT_password": {
+						"value": "[parameters('az_sqldb_AdventureWorkdLT_password')]"
+					},
+					"az_sqldb_AdventureWorksLT_password": {
+						"value": "[parameters('az_sqldb_AdventureWorksLT_password')]"
+					},
+					"azuresql_password": {
+						"value": "[parameters('azuresql_password')]"
+					},
+					"blobSource_connectionString": {
+						"value": "[parameters('blobSource_connectionString')]"
+					},
+					"az_adls_introtoadfna_02242025_properties_typeProperties_url": {
+						"value": "[parameters('az_adls_introtoadfna_02242025_properties_typeProperties_url')]"
+					},
+					"az_adls_introtoadlna_properties_typeProperties_url": {
+						"value": "[parameters('az_adls_introtoadlna_properties_typeProperties_url')]"
+					},
+					"az_sqldb_AdventureWorkdLT_properties_typeProperties_server": {
+						"value": "[parameters('az_sqldb_AdventureWorkdLT_properties_typeProperties_server')]"
+					},
+					"az_sqldb_AdventureWorkdLT_properties_typeProperties_database": {
+						"value": "[parameters('az_sqldb_AdventureWorkdLT_properties_typeProperties_database')]"
+					},
+					"az_sqldb_AdventureWorkdLT_properties_typeProperties_userName": {
+						"value": "[parameters('az_sqldb_AdventureWorkdLT_properties_typeProperties_userName')]"
+					},
+					"az_sqldb_AdventureWorksLT_properties_typeProperties_server": {
+						"value": "[parameters('az_sqldb_AdventureWorksLT_properties_typeProperties_server')]"
+					},
+					"az_sqldb_AdventureWorksLT_properties_typeProperties_database": {
+						"value": "[parameters('az_sqldb_AdventureWorksLT_properties_typeProperties_database')]"
+					},
+					"az_sqldb_AdventureWorksLT_properties_typeProperties_userName": {
+						"value": "[parameters('az_sqldb_AdventureWorksLT_properties_typeProperties_userName')]"
+					},
+					"azuresql_properties_typeProperties_server": {
+						"value": "[parameters('azuresql_properties_typeProperties_server')]"
+					},
+					"azuresql_properties_typeProperties_database": {
+						"value": "[parameters('azuresql_properties_typeProperties_database')]"
+					},
+					"azuresql_properties_typeProperties_userName": {
+						"value": "[parameters('azuresql_properties_typeProperties_userName')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}
