@@ -1,0 +1,20 @@
+{
+	"name": "Excel1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "blobSource",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "2023MapDataFile.xlsx",
+				"folderPath": "MMG",
+				"container": "training02242025"
+			}
+		},
+		"schema": []
+	}
+}
