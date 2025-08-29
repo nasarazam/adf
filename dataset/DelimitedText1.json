@@ -1,20 +1,22 @@
 {
-	"name": "Excel1",
+	"name": "DelimitedText1",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "blobSource",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
-		"type": "Excel",
+		"type": "DelimitedText",
 		"typeProperties": {
-			"sheetName": "CongressionalDistrict23",
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "2023MapDataFile.xlsx",
 				"folderPath": "MMG",
 				"container": "training02242025"
-			}
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
 		},
 		"schema": []
 	}

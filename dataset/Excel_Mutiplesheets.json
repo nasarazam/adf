@@ -1,5 +1,5 @@
 {
-	"name": "Excel1",
+	"name": "Excel_Mutiplesheets",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "blobSource",
@@ -8,13 +8,13 @@
 		"annotations": [],
 		"type": "Excel",
 		"typeProperties": {
-			"sheetName": "CongressionalDistrict23",
 			"location": {
 				"type": "AzureBlobStorageLocation",
 				"fileName": "2023MapDataFile.xlsx",
 				"folderPath": "MMG",
 				"container": "training02242025"
-			}
+			},
+			"firstRowAsHeader": true
 		},
 		"schema": []
 	}
