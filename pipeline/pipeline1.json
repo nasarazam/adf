@@ -17,13 +17,33 @@
 				"typeProperties": {
 					"source": {
 						"type": "AzureSqlSource",
-						"sqlReaderQuery": "select * from select * from AdventureWorksLT.INFORMATION_SCHEMA.TABLES\nwhere table_name like '%Prod%' and TABLE_TYPE = 'BASE TABLE'",
+						"sqlReaderQuery": "select * from AdventureWorksLT.INFORMATION_SCHEMA.TABLES\nwhere table_name like '%Sales%' and TABLE_TYPE = 'BASE TABLE'",
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
 					"dataset": {
 						"referenceName": "AzureSqlTable1",
 						"type": "DatasetReference"
+					},
+					"firstRowOnly": false
+				}
+			},
+			{
+				"name": "ForEach1",
+				"type": "ForEach",
+				"dependsOn": [
+					{
+						"activity": "Lkup_ListTables",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@activity('Lkup_ListTables').output.value",
+						"type": "Expression"
 					}
 				}
 			}
