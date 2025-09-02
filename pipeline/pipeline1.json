@@ -107,7 +107,7 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"filename": {
-											"value": "@concat(activity('Lkup_ListTables').output.table_name,'.csv')",
+											"value": "@concat(item().table_name,'.csv')",
 											"type": "Expression"
 										}
 									}
