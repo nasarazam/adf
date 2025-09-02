@@ -91,11 +91,11 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"tablename": {
-											"value": "('Lkup_ListTables').output.value.table_name",
+											"value": "item().table_name",
 											"type": "Expression"
 										},
 										"schemaname": {
-											"value": "@activity('Lkup_ListTables').output.table_schema",
+											"value": "item().table_schema",
 											"type": "Expression"
 										}
 									}
@@ -116,74 +116,6 @@
 						}
 					]
 				}
-			},
-			{
-				"name": "Export table",
-				"type": "Copy",
-				"dependsOn": [],
-				"policy": {
-					"timeout": "0.12:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"source": {
-						"type": "AzureSqlSource",
-						"queryTimeout": "02:00:00",
-						"partitionOption": "None"
-					},
-					"sink": {
-						"type": "DelimitedTextSink",
-						"storeSettings": {
-							"type": "AzureBlobStorageWriteSettings"
-						},
-						"formatSettings": {
-							"type": "DelimitedTextWriteSettings",
-							"quoteAllText": true,
-							"fileExtension": ".txt"
-						}
-					},
-					"enableStaging": false,
-					"translator": {
-						"type": "TabularTranslator",
-						"typeConversion": true,
-						"typeConversionSettings": {
-							"allowDataTruncation": true,
-							"treatBooleanAsNumber": false
-						}
-					}
-				},
-				"inputs": [
-					{
-						"referenceName": "AzureSqlTable_copyactivity",
-						"type": "DatasetReference",
-						"parameters": {
-							"tablename": {
-								"value": "('Lkup_ListTables').output.value.table_name",
-								"type": "Expression"
-							},
-							"schemaname": {
-								"value": "@activity('Lkup_ListTables').output.table_schema",
-								"type": "Expression"
-							}
-						}
-					}
-				],
-				"outputs": [
-					{
-						"referenceName": "tablecsv",
-						"type": "DatasetReference",
-						"parameters": {
-							"filename": {
-								"value": "@concat(activity('Lkup_ListTables').output.table_name,'.csv')",
-								"type": "Expression"
-							}
-						}
-					}
-				]
 			}
 		],
 		"annotations": []
