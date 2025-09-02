@@ -17,7 +17,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "AzureSqlSource",
-						"sqlReaderQuery": "select * from AdventureWorksLT.INFORMATION_SCHEMA.TABLES\nwhere table_name like '%Sales%' and TABLE_TYPE = 'BASE TABLE'",
+						"sqlReaderQuery": "select * from AdventureWorksLT.INFORMATION_SCHEMA.TABLES\nwhere table_name like '%Prod%' and TABLE_TYPE = 'BASE TABLE'",
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
@@ -91,11 +91,11 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"tablename": {
-											"value": "item().table_name",
+											"value": "@item().table_name",
 											"type": "Expression"
 										},
 										"schemaname": {
-											"value": "item().table_schema",
+											"value": "@item().table_schema",
 											"type": "Expression"
 										}
 									}
