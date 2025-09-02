@@ -22,7 +22,7 @@
 						"partitionOption": "None"
 					},
 					"dataset": {
-						"referenceName": "SourceDataset_job",
+						"referenceName": "AzureSqlTable1",
 						"type": "DatasetReference"
 					}
 				}
