@@ -68,9 +68,15 @@
 							"userProperties": [],
 							"typeProperties": {
 								"source": {
-									"type": "AzureSqlSource",
-									"queryTimeout": "02:00:00",
-									"partitionOption": "None"
+									"type": "JsonSource",
+									"storeSettings": {
+										"type": "AzureBlobStorageReadSettings",
+										"recursive": true,
+										"enablePartitionDiscovery": false
+									},
+									"formatSettings": {
+										"type": "JsonReadSettings"
+									}
 								},
 								"sink": {
 									"type": "DelimitedTextSink",
@@ -83,30 +89,12 @@
 										"fileExtension": ".txt"
 									}
 								},
-								"enableStaging": false,
-								"translator": {
-									"type": "TabularTranslator",
-									"typeConversion": true,
-									"typeConversionSettings": {
-										"allowDataTruncation": true,
-										"treatBooleanAsNumber": false
-									}
-								}
+								"enableStaging": false
 							},
 							"inputs": [
 								{
-									"referenceName": "AzureSqlTable_copyactivity",
-									"type": "DatasetReference",
-									"parameters": {
-										"tablename": {
-											"value": "@item().TABLE_NAME",
-											"type": "Expression"
-										},
-										"schemaname": {
-											"value": "@item().TABLE_SCHEMA",
-											"type": "Expression"
-										}
-									}
+									"referenceName": "Json1",
+									"type": "DatasetReference"
 								}
 							],
 							"outputs": [
