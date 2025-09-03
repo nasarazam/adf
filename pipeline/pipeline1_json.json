@@ -16,22 +16,19 @@
 				"userProperties": [],
 				"typeProperties": {
 					"source": {
-						"type": "DelimitedTextSource",
+						"type": "JsonSource",
 						"storeSettings": {
 							"type": "AzureBlobStorageReadSettings",
 							"recursive": true,
 							"enablePartitionDiscovery": false
 						},
 						"formatSettings": {
-							"type": "DelimitedTextReadSettings"
+							"type": "JsonReadSettings"
 						}
 					},
 					"dataset": {
-						"referenceName": "tablecsv",
-						"type": "DatasetReference",
-						"parameters": {
-							"filename": "tables.json"
-						}
+						"referenceName": "Json1",
+						"type": "DatasetReference"
 					},
 					"firstRowOnly": false
 				}
@@ -39,14 +36,9 @@
 			{
 				"name": "ForEachTable",
 				"type": "ForEach",
-				"dependsOn": [
-					{
-						"activity": "Lkup_ListTables",
-						"dependencyConditions": [
-							"Completed"
-						]
-					}
-				],
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
+				"dependsOn": [],
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
