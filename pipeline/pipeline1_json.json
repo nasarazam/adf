@@ -82,7 +82,6 @@
 									},
 									"formatSettings": {
 										"type": "DelimitedTextWriteSettings",
-										"maxRowsPerFile": 10,
 										"quoteAllText": true,
 										"fileExtension": ".txt"
 									}
