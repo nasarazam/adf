@@ -36,9 +36,14 @@
 			{
 				"name": "ForEachTable",
 				"type": "ForEach",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "Lkup_ListTables",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
@@ -53,7 +58,7 @@
 							"policy": {
 								"timeout": "0.12:00:00",
 								"retry": 0,
-								"retryIntervalInSeconds": 30,
+								"retryIntervalInSeconds": 10,
 								"secureOutput": false,
 								"secureInput": false
 							},
@@ -77,6 +82,7 @@
 									},
 									"formatSettings": {
 										"type": "DelimitedTextWriteSettings",
+										"maxRowsPerFile": 10,
 										"quoteAllText": true,
 										"fileExtension": ".txt"
 									}
