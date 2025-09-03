@@ -98,7 +98,14 @@
 							"inputs": [
 								{
 									"referenceName": "AzureSqlTable_copyactivity",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"tablename": "@item().table_name",
+										"schemaname": {
+											"value": "@item().schema_name",
+											"type": "Expression"
+										}
+									}
 								}
 							],
 							"outputs": [
