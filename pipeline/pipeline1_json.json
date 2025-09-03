@@ -67,13 +67,17 @@
 								"source": {
 									"type": "AzureSqlSource",
 									"queryTimeout": "02:00:00",
+									"isolationLevel": {
+										"value": "@item()",
+										"type": "Expression"
+									},
 									"partitionOption": "None"
 								},
 								"sink": {
 									"type": "DelimitedTextSink",
 									"storeSettings": {
 										"type": "AzureBlobStorageWriteSettings",
-										"copyBehavior": "MergeFiles"
+										"copyBehavior": "FlattenHierarchy"
 									},
 									"formatSettings": {
 										"type": "DelimitedTextWriteSettings",
@@ -93,7 +97,7 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "AzureSqlTable1",
+									"referenceName": "AzureSqlTable_copyactivity",
 									"type": "DatasetReference"
 								}
 							],
