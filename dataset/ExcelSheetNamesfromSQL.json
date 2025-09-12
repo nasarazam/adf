@@ -1,0 +1,30 @@
+{
+	"name": "ExcelSheetNamesfromSQL",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "az_sqldb_AdventureWorkdLT",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "SheetName",
+				"type": "varchar"
+			},
+			{
+				"name": "isactive",
+				"type": "bit"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "ExcelSheets"
+		}
+	}
+}

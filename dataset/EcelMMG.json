@@ -1,0 +1,30 @@
+{
+	"name": "EcelMMG",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "blobSource",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"dsSheetName": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": {
+				"value": "@dataset().dsSheetName",
+				"type": "Expression"
+			},
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "2023MapDataFile.xlsx",
+				"folderPath": "MMG",
+				"container": "training02242025"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": []
+	}
+}
