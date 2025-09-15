@@ -124,6 +124,39 @@
 									}
 								}
 							]
+						},
+						{
+							"name": "FailureLogs",
+							"type": "Script",
+							"dependsOn": [
+								{
+									"activity": "Copy data1_copy1",
+									"dependencyConditions": [
+										"Failed"
+									]
+								}
+							],
+							"policy": {
+								"timeout": "0.12:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"linkedServiceName": {
+								"referenceName": "favsd_dev17",
+								"type": "LinkedServiceReference"
+							},
+							"typeProperties": {
+								"scripts": [
+									{
+										"type": "Query",
+										"text": "INSERT INTO ErrorLog (\n    RunDate, \n    PipelineName, \n    ActivityName,\n    SheetName,\n    TargetTable,\n    ErrorMessage,\n    RunId\n) VALUES (\n    GETDATE(),\n    '@{pipeline().Pipeline}',\n    '@{activity('CopyData').ActivityName}',\n    '@{item().SheetName}',  -- From current ForEach item\n    '@{item().TargetTable}', -- From current ForEach item  \n    'Copy activity failed - check ADF monitor for details',\n    '@{pipeline().RunId}'\n)"
+									}
+								],
+								"scriptBlockExecutionTimeout": "02:00:00"
+							}
 						}
 					]
 				}
