@@ -97,7 +97,7 @@
 							],
 							"outputs": [
 								{
-									"referenceName": "favsd_dev17_fa_mmg_adf",
+									"referenceName": "FA_MMG_Dest",
 									"type": "DatasetReference"
 								}
 							]

@@ -1,0 +1,12 @@
+{
+	"name": "FA_MMG_Dest",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "favsd_dev17",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": []
+	}
+}
