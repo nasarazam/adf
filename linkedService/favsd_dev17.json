@@ -1,0 +1,21 @@
+{
+	"name": "favsd_dev17",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"server": "favsd-dev17.fa.local",
+			"database": "FA_MMG_ADF",
+			"encrypt": "False",
+			"trustServerCertificate": true,
+			"authenticationType": "Windows",
+			"userName": "fa\\nazam",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJjMjI0MGZlZC1lMTAxLTQzZWYtOTBhYS0xOGE2NzU2MTE2OWMiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "FAVSP-DBA17IntegrationRunTime",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
