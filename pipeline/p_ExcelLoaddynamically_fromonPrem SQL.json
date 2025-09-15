@@ -98,7 +98,13 @@
 							"outputs": [
 								{
 									"referenceName": "FA_MMG_Dest",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"tablename": {
+											"value": "@item().tablename",
+											"type": "Expression"
+										}
+									}
 								}
 							]
 						}
