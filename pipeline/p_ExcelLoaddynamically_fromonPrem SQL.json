@@ -74,6 +74,21 @@
 									"tableOption": "autoCreate"
 								},
 								"enableStaging": false,
+								"enableSkipIncompatibleRow": true,
+								"logSettings": {
+									"enableCopyActivityLog": true,
+									"copyActivityLogSettings": {
+										"logLevel": "Info",
+										"enableReliableLogging": false
+									},
+									"logLocationSettings": {
+										"linkedServiceName": {
+											"referenceName": "az_adls_introtoadfna_02242025",
+											"type": "LinkedServiceReference"
+										},
+										"path": "training02242025/MMG"
+									}
+								},
 								"translator": {
 									"type": "TabularTranslator",
 									"typeConversion": true,
