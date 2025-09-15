@@ -1,0 +1,34 @@
+{
+	"name": "favsd_dev17_fa_mmg_adf",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "favsd_dev17",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "SheetName",
+				"type": "varchar"
+			},
+			{
+				"name": "TableName",
+				"type": "varchar"
+			},
+			{
+				"name": "isactive",
+				"type": "bit"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "ExcelSheets"
+		}
+	}
+}
