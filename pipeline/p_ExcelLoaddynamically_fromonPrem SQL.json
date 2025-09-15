@@ -152,7 +152,10 @@
 								"scripts": [
 									{
 										"type": "Query",
-										"text": "INSERT INTO ErrorLog (\n    RunDate, \n    PipelineName, \n    ActivityName,\n    SheetName,\n    TargetTable,\n    ErrorMessage,\n    RunId\n) VALUES (\n    GETDATE(),\n    '@{pipeline().Pipeline}',\n    '@{activity('CopyData').ActivityName}',\n    '@{item().SheetName}',  -- From current ForEach item\n    '@{item().TargetTable}', -- From current ForEach item  \n    'Copy activity failed - check ADF monitor for details',\n    '@{pipeline().RunId}'\n)"
+										"text": {
+											"value": "INSERT INTO ErrorLog (\n    RunDate,\n    PipelineName,\n    ActivityName, \n    SheetName,\n    TargetTable,\n    ErrorMessage,\n    RunId\n) VALUES (\n    GETDATE(),\n    '@{pipeline().Pipeline}',\n    'Copy Data Activity',\n    '@{item().SheetName}',\n    '@{item().TargetTable}',\n    'Sheet processing failed - check ADF monitor for details',\n    '@{pipeline().RunId}'\n)",
+											"type": "Expression"
+										}
 									}
 								],
 								"scriptBlockExecutionTimeout": "02:00:00"
