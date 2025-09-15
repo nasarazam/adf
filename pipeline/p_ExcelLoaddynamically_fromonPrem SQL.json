@@ -16,13 +16,13 @@
 				"userProperties": [],
 				"typeProperties": {
 					"source": {
-						"type": "AzureSqlSource",
-						"sqlReaderQuery": "Select * from ExcelSheets where isactive = 1\n",
+						"type": "SqlServerSource",
+						"sqlReaderQuery": "Select * from ExcelSheets where isActive = 1",
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
 					"dataset": {
-						"referenceName": "ExcelSheetNamesfromSQL",
+						"referenceName": "favsd_dev17_fa_mmg_adf",
 						"type": "DatasetReference"
 					},
 					"firstRowOnly": false
@@ -68,15 +68,10 @@
 									}
 								},
 								"sink": {
-									"type": "AzureSqlSink",
-									"preCopyScript": {
-										"value": "IF OBJECT_ID('@{item().tableName}', 'U') IS NOT NULL\n    TRUNCATE TABLE @{item().tableName}",
-										"type": "Expression"
-									},
+									"type": "SqlServerSink",
 									"writeBehavior": "insert",
 									"sqlWriterUseTableLock": false,
-									"tableOption": "autoCreate",
-									"disableMetricsCollection": false
+									"tableOption": "autoCreate"
 								},
 								"enableStaging": false,
 								"translator": {
@@ -102,14 +97,8 @@
 							],
 							"outputs": [
 								{
-									"referenceName": "AzureSqlTable2",
-									"type": "DatasetReference",
-									"parameters": {
-										"ds_TableName": {
-											"value": "@item().tableName",
-											"type": "Expression"
-										}
-									}
+									"referenceName": "favsd_dev17_fa_mmg_adf",
+									"type": "DatasetReference"
 								}
 							]
 						}
