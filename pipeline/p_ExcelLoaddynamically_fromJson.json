@@ -1,5 +1,5 @@
 {
-	"name": "p_ExcelLoaddynamically_fromSQL",
+	"name": "p_ExcelLoaddynamically_fromJson",
 	"properties": {
 		"activities": [
 			{
