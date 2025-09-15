@@ -45,6 +45,8 @@
 						"value": "@activity('GetListofExcelSheets').output.value",
 						"type": "Expression"
 					},
+					"isSequential": false,
+					"batchCount": 5,
 					"activities": [
 						{
 							"name": "Copy data1_copy1",
