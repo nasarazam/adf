@@ -153,7 +153,7 @@
 									{
 										"type": "Query",
 										"text": {
-											"value": "INSERT INTO ErrorLog (\n    RunDate,\n    PipelineName,\n    ActivityName, \n    SheetName,\n    TargetTable,\n    ErrorMessage,\n    RunId\n) VALUES (\n    GETDATE(),\n    '@{pipeline().Pipeline}',\n    'Copy Data Activity',\n    '@{item().SheetName}',\n    '@{item().TargetTable}',\n    'Sheet processing failed - check ADF monitor for details',\n    '@{pipeline().RunId}'\n)",
+											"value": "INSERT INTO ErrorLog (\n    RunDate,\n    PipelineName,\n    ActivityName, \n    SheetName,\n    TargetTable,\n    ErrorMessage,\n    RunId\n) VALUES (\n    GETDATE(),\n    '@{pipeline().Pipeline}',\n    'Copy Data Activity',\n    '@{item().SheetName}',\n    '@{item().TableName}',\n    'Sheet processing failed - check ADF monitor for details',\n    '@{pipeline().RunId}'\n)",
 											"type": "Expression"
 										}
 									}
