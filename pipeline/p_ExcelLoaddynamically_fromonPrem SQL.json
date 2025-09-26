@@ -1,6 +1,7 @@
 {
 	"name": "p_ExcelLoaddynamically_fromonPrem SQL",
 	"properties": {
+		"description": "This pipeline loads Multiple ExcelSheets from an Excel file into corresponding Excel Tables. The Lookup Activity, \"GetExcelSheets\" gets the the names of ExcelSheels and their corresponsing Table Names from the table \"ExcelSheets\" in FA_MMG_ADF Database on FAVSD-DEV17.\n",
 		"activities": [
 			{
 				"name": "GetListofExcelSheets",
