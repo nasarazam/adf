@@ -1,7 +1,7 @@
 {
 	"name": "p_ExcelLoaddynamically_fromonPrem SQL",
 	"properties": {
-		"description": "This pipeline loads Multiple ExcelSheets from an Excel file into corresponding Excel Tables. The Lookup Activity, \"GetExcelSheets\" gets the the names of ExcelSheels and their corresponsing Table Names from the table \"ExcelSheets\" in FA_MMG_ADF Database on FAVSD-DEV17.\n",
+		"description": "This pipeline loads Multiple ExcelSheets from an Excel file into corresponding Excel Tables. The Lookup Activity, \"GetExcelSheets\" gets the the names of ExcelSheels and their corresponsing Table Names from the table \"ExcelSheets\" in FA_MMG_ADF Database on FAVSD-DEV17.\n\nIsActive column in \"ExcelSheets\" table rells what Sheets needs to be processed.  An Excel files could have many sheets and it will process only the ones in the table \"ExcelSheets\" and whose IsActive is set to 1.    \n\nThe logic in Copy Data also handles any Excel Sheets that is not present in the Excel file (normally happens due to typo).  We added a teest \"WrongSheet\".  The copy Data \"failed\" channel write to Error Table called \"ErrorLog\" for wrong nonexitent sheet name.  However, it process all valid sheet name and DOES NOT stop the whole activity because of wrong sheet name(s).\n",
 		"activities": [
 			{
 				"name": "GetListofExcelSheets",
