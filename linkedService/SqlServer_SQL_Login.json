@@ -5,13 +5,13 @@
 		"annotations": [],
 		"type": "SqlServer",
 		"typeProperties": {
-			"server": "favsd-dev17",
+			"server": "favsd-dev17.fa.local",
 			"database": "FA_MMG_ADF",
 			"encrypt": "optional",
 			"trustServerCertificate": false,
 			"authenticationType": "SQL",
 			"userName": "nasar",
-			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiIxMGRjNzI4Zi0yMTFkLTQ4Y2EtOTM2Yi1mNzcyOWE0MWY5N2EiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI2MTAwMDQzYi1iMjkyLTQzMGUtOTQxNS03NDQ2ODNmZjg0MjAiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
 		},
 		"connectVia": {
 			"referenceName": "FAVSP-DBA17IntegrationRunTime",
